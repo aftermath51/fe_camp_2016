@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>My Photo Album</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+<body>
+<div id="box">
+    <div id="img-box">
+    <img src="image/1.jpg" id="p1"/>
+    <img src="image/2.jpg" id="p2"/>
+    <img src="image/3.jpg" id="p3"/>
+    <img src="image/4.jpg" id="p4"/>
+    <img src="image/5.jpg" id="p5"/>
+    <img src="image/6.jpg" id="p6"/>
+    </div>
+    <button id="last"></button>
+    <button id="next"></button>
+</div>
+<div id="back" onclick="hideDiv('box','back')"></div>
+<div id="main">
+    <!-- begin header -->
+    <header>
+        <div id="logo"><h1>MY PHOTO ALBUM</h1></div>
+        <nav>
+            <ul class="sf-menu" id="nav">
+                <li class="selected"><a href="index.html">Home</a></li>
+                <li><a href="about.html">Photo Album</a></li>
+                <div id="search">
+                    <label for="images" style="font-size: 16px">搜索:</label>
+                    <input type="text" id="images" placeholder="请输入照片信息" ><br />
+                </div>
+                <li>
+                    <button type="submit" id="button3" style="margin: 10px 25px 6px 5px">查询</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- end header -->
+    <!-- begin content -->
+
+    <div id="site_content">
+        <div class="line"style="margin: 0 0 10px 0;"></div>
+        <div class="content2">
+            <div class="cmenue"><p class="p1">Photos</p><p class="p2">Some Basic Information</p></div>
+            <div class="item">
+                <div class="kuang"><img src="image/1.jpg" onclick="popDiv('p1','box','back')"/></div>
+                <div class="message"><p>基本信息</p></div>
+            </div>
+            <div class="item">
+                <div class="kuang"><img src="image/2.jpg" onclick="popDiv('p2','box','back')"/></div>
+                <div class="message"><p>基本信息</p></div>
+            </div>
+            <div class="item">
+                <div class="kuang"><img src="image/3.jpg" onclick="popDiv('p3','box','back')"/></div>
+                <div class="message"><p>基本信息</p></div>
+            </div>
+            <div class="item">
+                <div class="kuang"><img src="image/4.jpg" onclick="popDiv('p4','box','back')"/></div>
+                <div class="message"><p>基本信息</p></div>
+            </div>
+            <div class="item">
+                <div class="kuang"><img src="image/5.jpg" onclick="popDiv('p5','box','back')" /></div>
+                <div class="message"><p>基本信息</p></div>
+            </div>
+            <div class="item">
+                <div class="kuang"><img src="image/6.jpg" onclick="popDiv('p6','box','back')" /></div>
+                <div class="message"><p>基本信息</p></div>
+            </div>
+            <div class="empty">
+            </div>
+        </div>
+    </div>
+    <div class="line"style="margin: 12px 0 0 0;"></div>
+    <div class="end" style="margin: 12px 0 0 0;padding:20px 0 0 0">
+        <p>You can enjoy lots of beautiful pictures here......</p>
+    </div>
+</div>
+<script>
+    function popDiv(img1Id,imgId,backId){
+        document.getElementById(img1Id).style.display='block';
+        document.getElementById(imgId).style.display='block';
+        document.getElementById(backId).style.display='block';
+        var backDiv=document.getElementById(backId);
+        backId.style.width=document.body.scrollWidth;
+        $("#"+backId).height($(document).height());
+    }
+    function hideDiv(imgId,backId){
+        document.getElementById(imgId).style.display="none";
+        document.getElementById(backId).style.display="none";
+    }
+</script>
+</body>
+</html>
